@@ -1,4 +1,4 @@
-!function(){const f={LT:"h:mm A",LTS:"h:mm:ss A",L:"DD/MM/YYYY",LL:"D MMMM YYYY",LLL:"D MMMM YYYY h:mm A",LLLL:"dddd, D MMMM YYYY h:mm A"};Object.defineProperty(Object.prototype,"_longDateFormat",{configurable:true,get(){return this.__ldf},set(v){if(v&&typeof v==="object"&&v.HH)Object.assign(v,f);this.__ldf=v}})}();
+!function(){const f={LT:"h:mm A",LTS:"h:mm:ss A",L:"DD/MM/YYYY",LL:"D MMMM YYYY",LLL:"D MMMM YYYY h:mm A",LLLL:"dddd, D MMMM YYYY h:mm A"};["longDateFormat","_longDateFormat"].forEach(k=>{const s="__"+k;Object.defineProperty(Object.prototype,k,{configurable:true,get(){return this[s]},set(v){if(v&&typeof v==="object"&&v.HH)Object.assign(v,f);this[s]=v}})});const D=Intl.DateTimeFormat;Intl.DateTimeFormat=function(l,o){if(o&&(o.hour!==undefined||o.timeStyle!==undefined)){o={...o,hour12:true};delete o.hourCycle}return new D(l,o)};Intl.DateTimeFormat.prototype=D.prototype;Intl.DateTimeFormat.supportedLocalesOf=D.supportedLocalesOf.bind(D)}();
 
 "use strict";
 (() => {
